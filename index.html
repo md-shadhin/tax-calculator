@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tax Calculator</h1>
+        <div class="form-row">
+            <label for="salary">Salary:</label>
+            <input type="number" id="salary" placeholder="Enter your salary">
+            <input type="text" id="calculatedSalary" readonly>
+        </div>
+        <div class="form-row">
+            <label for="bonus">Bonus:</label>
+            <input type="text" id="bonus" readonly>
+            <input type="text" id="calculatedBonus" readonly>
+        </div>
+        <div class="form-row">
+            <label for="allowance">Allowance:</label>
+            <div class="input-field-container">
+                <input type="number" id="allowance" placeholder="Enter your allowance">
+            </div>
+        </div>
+        <div class="form-row">
+            <label for="totalReceived">Total Yearly Received:</label>
+            <div class="input-field-container">
+                <input type="text" id="totalReceived" readonly>
+            </div>
+        </div>
+        <button onclick="calculateTax()">Calculate</button>
+
+        <table class="result-table">
+            <tr>
+                <td>Basic Salary:</td>
+                <td><input type="text" id="basicSalary" readonly></td>
+            </tr>
+            <tr>
+                <td>House Rent:</td>
+                <td><input type="text" id="houseRent" readonly></td>
+            </tr>
+            <tr>
+                <td>Medical:</td>
+                <td><input type="text" id="medical" readonly></td>
+            </tr>
+            <tr>
+                <td>Conveyance:</td>
+                <td><input type="text" id="conveyance" readonly></td>
+            </tr>
+            <tr>
+                <td>Festival Bonus:</td>
+                <td><input type="text" id="festivalBonus" readonly></td>
+            </tr>
+            <tr>
+                <td>Total:</td>
+                <td><input type="text" id="total" readonly></td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
