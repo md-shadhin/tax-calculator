@@ -67,3 +67,10 @@ h1 {
 }
 
 /* Add more styling as needed */
+
+.github-ribbon {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000; /* Adjust z-index as needed */
+}
