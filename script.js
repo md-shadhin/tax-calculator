@@ -25,8 +25,10 @@ function calculateTax() {
     const calculatedBonus = bonus * 2;
     const totalReceived = yearlySalary + (bonus*2) + allowance;
 
+    document.getElementById("stepForCalculatedSalary").value = salary + " x 12";
     document.getElementById("calculatedSalary").value = yearlySalary;
-    document.getElementById("bonus").innerHTML = bonus;
+    // document.getElementById("bonus").value = bonus;
+    document.getElementById("stepForCalculatedBonus").value = bonus + " x 2";
     document.getElementById("calculatedBonus").value = calculatedBonus;
     document.getElementById("totalReceived").value = totalReceived;
 

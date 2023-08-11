@@ -32,19 +32,18 @@
 
             </table>
         </div>
-                
-                
-            
 
         <div class="result-table">
             <table>
 
                 <tr>
-                    <td><label>Salary (12 Months):</label></td>
+                    <td><label>Yearly Salary:</label></td>
+                    <td><input type="text" id="stepForCalculatedSalary" readonly></td>
                     <td><input type="text" id="calculatedSalary" readonly></td>
                 </tr>
                 <tr>
-                    <td><label>Festival Bonus (<label id="bonus">0</label>):</label></td>
+                    <td><label>Festival Bonus</label></td>
+                    <td><input type="text" id="stepForCalculatedBonus" readonly></td>
                     <td><input type="text" id="calculatedBonus" readonly></td>
                 </tr>
                 
@@ -52,7 +51,9 @@
                     <td><label for="totalReceived">Total Yearly Received:</label></td>
                     <td colspan="2"><input type="text" id="totalReceived" readonly></td>
                 </tr>
-                
+            </table>
+        
+            <table>
                 <tr>
                     <td><label>Basic Salary:</label></td>
                     <td><input type="text" id="basicSalary" readonly></td>
@@ -86,6 +87,9 @@
                     <td><label>Total Taxable Income:</label></td>
                     <td><input type="text" id="totalTaxableIncome" readonly></td>
                 </tr>
+            </table>
+
+            <table>
                 <tr>
                     <td><label>Tax on First 350,000 (0%):</label></td>
                     <td><input type="text" id="tax0" readonly></td>
@@ -110,6 +114,10 @@
                     <td><label>Tax on Rest (25%):</label></td>
                     <td><input type="text" id="tax25" readonly></td>
                 </tr>
+
+            </table>
+
+            <table>
                 <tr>
                     <td><label>Tax on Whole Year of Financial Year:</label></td>
                     <td><input type="text" id="totalTax" readonly></td>
