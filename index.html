@@ -4,131 +4,134 @@
     <title>Tax Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css?v=2">
 </head>
 <body>
-    <a class="github-ribbon" href="https://github.com/md-shadhin/tax-calculator"><img decoding="async" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
+    <a class="github-ribbon" href="https://github.com/md-shadhin/tax-calculator"><img decoding="async" width="100" height="100" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=200%2C200" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
     <div class="container">
         <h1>Tax Calculator</h1>
-        <div class="input-table">
-            <table>
-
-                <tr>
-                    <td><label>Salary:</label></td>
-                    <td><input type="number" id="salary" placeholder="Enter your salary"></td>
-                </tr>
-
-                <tr>
-                    <td><label>Allowance:</label></td>
-                    <td><input type="number" id="allowance" placeholder="Enter your allowance (Default: 48000 Tk)"></td>
-                </tr>
-
-                <tr>
-                    <td colspan="3">
-                        <button onclick="calculateTax()">Calculate</button>
-                        <button onclick="resetValues()">Reset</button>
-                    </td>
-                </tr>
-
-            </table>
-        </div>
-
-        <div class="result-table">
-            <table>
-
-                <tr>
-                    <td><label>Yearly Salary:</label></td>
-                    <td><input type="text" id="stepForCalculatedSalary" readonly></td>
-                    <td><input type="text" id="calculatedSalary" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Festival Bonus</label></td>
-                    <td><input type="text" id="stepForCalculatedBonus" readonly></td>
-                    <td><input type="text" id="calculatedBonus" readonly></td>
-                </tr>
-                
-                <tr>
-                    <td><label for="totalReceived">Total Yearly Received:</label></td>
-                    <td colspan="2"><input type="text" id="totalReceived" readonly></td>
-                </tr>
-            </table>
         
-            <table>
-                <tr>
-                    <td><label>Basic Salary:</label></td>
-                    <td><input type="text" id="basicSalary" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>House Rent:</label></td>
-                    <td><input type="text" id="houseRent" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Medical:</label></td>
-                    <td><input type="text" id="medical" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Conveyance:</label></td>
-                    <td><input type="text" id="conveyance" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Festival Bonus:</label></td>
-                    <td><input type="text" id="festivalBonus" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Total:</label></td>
-                    <td><input type="text" id="total" readonly></td>
-                </tr>
+        <table>
 
-                <tr>
-                    <td><label>Less: Allowable Expenses:</label></td>
-                    <td><input type="text" id="allowableExpenses" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Total Taxable Income:</label></td>
-                    <td><input type="text" id="totalTaxableIncome" readonly></td>
-                </tr>
-            </table>
+            <tr>
+                <td><label>Monthly Salary:</label></td>
+                <td><input type="number" id="salary" placeholder="Enter your salary" oninput="calculateTax()"></td>
+            </tr>
 
-            <table>
-                <tr>
-                    <td><label>Tax on First 350,000 (0%):</label></td>
-                    <td><input type="text" id="tax0" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax on Next 100,000 (5%):</label></td>
-                    <td><input type="text" id="tax5" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax on Next 300,000 (10%):</label></td>
-                    <td><input type="text" id="tax10" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax on Next 400,000 (15%):</label></td>
-                    <td><input type="text" id="tax15" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax on Next 500,000 (20%):</label></td>
-                    <td><input type="text" id="tax20" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax on Rest (25%):</label></td>
-                    <td><input type="text" id="tax25" readonly></td>
-                </tr>
+            <tr>
+                <td><label>Monthly Allowance:</label></td>
+                <td><input type="number" id="allowance" placeholder="Default: 4000 Tk" oninput="calculateTax()"></td>
+            </tr>
 
-            </table>
+            <tr>
+                <td colspan="3">
+                    <button onclick="btnCalculateTax()">Calculate</button>
+                    <button onclick="resetValues()">Reset</button>
+                </td>
+            </tr>
 
-            <table>
-                <tr>
-                    <td><label>Tax on Whole Year of Financial Year:</label></td>
-                    <td><input type="text" id="totalTax" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Tax deductible per month:</label></td>
-                    <td><input type="text" id="taxDeductiblePerMonth" readonly></td>
-                </tr>
-            </table>
-        </div>
+        </table>
+    
+        <table>
+
+            <tr>
+                <td><label>Yearly Salary:</label></td>
+                <td><input type="text" id="stepForCalculatedSalary" readonly></td>
+                <td><input type="text" id="calculatedSalary" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Yearly Allowance:</label></td>
+                <td><input type="text" id="stepForCalculatedAllowance" readonly></td>
+                <td><input type="text" id="calculatedAllowance" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Festival Bonus:</label></td>
+                <td><input type="text" id="stepForCalculatedBonus" readonly></td>
+                <td><input type="text" id="calculatedBonus" readonly></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><label for="totalReceived">Total Yearly Received:</label></td>
+                <td><input type="text" id="totalReceived" readonly></td>
+            </tr>
+        </table>
+    
+        <table>
+            <tr>
+                <td><label>Basic Salary:</label></td>
+                <td><input type="text" id="basicSalary" readonly></td>
+            </tr>
+            <tr>
+                <td><label>House Rent:</label></td>
+                <td><input type="text" id="houseRent" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Medical:</label></td>
+                <td><input type="text" id="medical" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Conveyance:</label></td>
+                <td><input type="text" id="conveyance" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Festival Bonus:</label></td>
+                <td><input type="text" id="festivalBonus" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Total:</label></td>
+                <td><input type="text" id="total" readonly></td>
+            </tr>
+
+            <tr>
+                <td><label>Less: Allowable Expenses:</label></td>
+                <td><input type="text" id="allowableExpenses" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Total Taxable Income:</label></td>
+                <td><input type="text" id="totalTaxableIncome" readonly></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><label>Tax on First 350,000 (0%):</label></td>
+                <td><input type="text" id="tax0" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax on Next 100,000 (5%):</label></td>
+                <td><input type="text" id="tax5" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax on Next 300,000 (10%):</label></td>
+                <td><input type="text" id="tax10" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax on Next 400,000 (15%):</label></td>
+                <td><input type="text" id="tax15" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax on Next 500,000 (20%):</label></td>
+                <td><input type="text" id="tax20" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax on Rest (25%):</label></td>
+                <td><input type="text" id="tax25" readonly></td>
+            </tr>
+
+        </table>
+
+        <table>
+            <tr>
+                <td><label>Tax on Whole Year of Financial Year:</label></td>
+                <td><input type="text" id="totalTax" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Tax deductible per month:</label></td>
+                <td><input type="text" id="taxDeductiblePerMonth" readonly></td>
+            </tr>
+        </table>
+        
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>

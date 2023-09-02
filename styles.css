@@ -21,49 +21,39 @@ h1 {
     margin-bottom: 20px;
 }
 
-.input-table table,
-.result-table table {
+table{
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.input-table td,
-.result-table td {
+td {
     padding: 8px 12px;
     border: 1px solid #dcdcdc;
     text-align: left;
-}
-
-.input-table td label {
     font-weight: bold;
 }
 
-.input-table input[type="number"],
-.input-table input[type="text"] {
+input {
     width: 100%;
-    padding: 6px;
+    padding: 5px 0px;
     border: 1px solid #dcdcdc;
+    text-align: center;
     border-radius: 4px;
 }
 
-.input-table button {
+input:read-only {
+  border: none;
+  background-color: #f5f5f5;
+}
+
+button {
     background-color: #007BFF;
     color: #ffffff;
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.result-table td input[type="text"] {
-    width: 100%;
-    border: none;
-    background-color: #f5f5f5;
-}
-
-.result-table td label {
-    font-weight: bold;
 }
 
 /* Add more styling as needed */
