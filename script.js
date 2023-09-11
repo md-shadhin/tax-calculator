@@ -1,15 +1,3 @@
-
-function btnCalculateTax(){
-    const salary = parseFloat(document.getElementById("salary").value);
-    if (isNaN(salary)) {
-        alert("Please enter valid numbers for Salary.");
-        resetValues();
-        return;
-    }
-
-    calculateTax();
-}
-
 function calculateTax() {
     const salary = parseFloat(document.getElementById("salary").value);
     var allowance = parseFloat(document.getElementById("allowance").value);
