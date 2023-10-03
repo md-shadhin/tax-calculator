@@ -1,8 +1,9 @@
 /* CSS for Tax Calculator */
+
+/* Common Styles for Both Light and Dark Mode */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
@@ -11,17 +12,15 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #007BFF;
     margin-bottom: 20px;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -43,24 +42,142 @@ input {
 }
 
 input:read-only {
-  border: none;
-  background-color: #f5f5f5;
+    border: none;
+    background-color: #f5f5f5;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Light Mode Styles */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+table {
+    border-color: #dcdcdc;
+}
+
+input {
+    background-color: #ffffff;
+    color: #333;
+    border-color: #dcdcdc;
 }
 
 button {
     background-color: #007BFF;
     color: #ffffff;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-/* Add more styling as needed */
+/* Dark Mode Styles */
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode button {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode body {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .container {
+    background-color: #444;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode h1 {
+    color: #00aaff;
+}
+
+.dark-mode table {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
+}
+
+.dark-mode input {
+    background-color: #222;
+    color: #fff;
+    border-color: #444;
+}
+
+
+.dark-mode-toggle {
+    display: inline-block;
+    position: relative;
+    width: 15rem;
+    margin: 2%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 505;
+    height: 1.2rem;
+}
+
+/* Slider (round part of the button) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff3b2;
+    border-radius: 34px;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.slider:before {
+    position: absolute;
+    content: "Light";
+    text-align: center;
+    height: 20px;
+    width: 40px;
+    padding: 2%;
+    bottom: -5px;
+    background-color: #e2e2e2;
+    border-radius: 15%;
+    transition: 0.8s;
+    transform: translateX(-118%);
+}
+
+input:checked+.slider {
+    background-color: #007BFF;
+    width: 100%;
+
+}
+
+input:checked+.slider:before {
+    transform: translateX(202%);
+    content: "Dark";
+    background-color: #000000;
+    text-align: center;
+}
 
 .github-ribbon {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000; /* Adjust z-index as needed */
+    z-index: 1000;
+    /* Adjust z-index as needed */
 }
