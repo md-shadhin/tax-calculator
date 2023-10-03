@@ -1,11 +1,5 @@
-document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
 
-function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-}
-
-function btnCalculateTax() {
+function btnCalculateTax(){
     const salary = parseFloat(document.getElementById("salary").value);
     if (isNaN(salary)) {
         alert("Please enter valid numbers for Salary.");
