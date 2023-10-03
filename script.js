@@ -1,3 +1,10 @@
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+
+function toggleDarkMode() {
+    
+    const body = document.body;
+    body.classList.toggle("dark-mode");  
+}
 
 function btnCalculateTax(){
     const salary = parseFloat(document.getElementById("salary").value);
