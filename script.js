@@ -1,3 +1,22 @@
+document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
+
+function toggleDarkMode() {
+    
+    const body = document.body;
+    body.classList.toggle("dark-mode");  
+}
+
+function btnCalculateTax(){
+    const salary = parseFloat(document.getElementById("salary").value);
+    if (isNaN(salary)) {
+        alert("Please enter valid numbers for Salary.");
+        resetValues();
+        return;
+    }
+
+    calculateTax();
+}
+
 function calculateTax() {
     const salary = parseFloat(document.getElementById("salary").value);
     var allowance = parseFloat(document.getElementById("allowance").value);
@@ -15,7 +34,7 @@ function calculateTax() {
     const yearlyAllowance = allowance * 12
     const bonus = Math.ceil(salary / 2);
     const calculatedBonus = bonus * 2;
-    const totalReceived = yearlySalary + (bonus*2) + yearlyAllowance;
+    const totalReceived = yearlySalary + (bonus * 2) + yearlyAllowance;
 
     document.getElementById("stepForCalculatedSalary").value = salary + " x 12";
     document.getElementById("calculatedSalary").value = yearlySalary;
@@ -28,7 +47,7 @@ function calculateTax() {
 
 
     // Calculate the values for the new table
-    const basicSalary = Math.ceil((10/16) * (yearlySalary+yearlyAllowance-30000));
+    const basicSalary = Math.ceil((10 / 16) * (yearlySalary + yearlyAllowance - 30000));
 
 
     const houseRent = Math.ceil(basicSalary / 2);
@@ -53,9 +72,8 @@ function calculateTax() {
     document.getElementById("totalTaxableIncome").value = totalTaxableIncome;
 
     calculateIncomeTax(totalTaxableIncome);
-    
-}
 
+}
 
 function calculateIncomeTax(income) {
 
@@ -68,33 +86,33 @@ function calculateIncomeTax(income) {
 
     if (income <= 350000) {
         tax0 = 0; // No tax on the first Tk 3.5 lakh
-    } 
-    
+    }
+
     else if (income <= 450000) {
         tax5 = (income - 350000) * 0.05; // 5% tax on the next Tk 1 lakh
-    } 
-    
+    }
+
     else if (income <= 750000) {
         tax5 = 5000 // 5% tax on the first Tk 1 lakh
 
         tax10 = (income - 450000) * 0.10;
-    } 
-    
+    }
+
     else if (income <= 1150000) {
         tax5 = 5000 // 5% tax on the first Tk 1 lakh
         tax10 = 30000 // 10% tax on the next Tk 3 lakh
 
         tax15 = (income - 750000) * 0.15;
-    } 
-    
+    }
+
     else if (income <= 1650000) {
         tax5 = 5000 // 5% tax on the first Tk 1 lakh
         tax10 = 30000 // 10% tax on the next Tk 3 lakh
         tax15 = 60000 // 15% tax on the next Tk 4 lakh
 
         tax20 = (income - 1150000) * 0.20;
-    } 
-    
+    }
+
     else {
         tax5 = 5000 // 5% tax on the first Tk 1 lakh
         tax10 = 30000 // 10% tax on the next Tk 3 lakh
@@ -116,7 +134,6 @@ function calculateIncomeTax(income) {
     document.getElementById("totalTax").value = totalTax.toFixed(2);
     document.getElementById("taxDeductiblePerMonth").value = taxDeductiblePerMonth.toFixed(2);
 }
-
 
 function resetValues() {
     const inputFields = document.querySelectorAll('input[type="number"], input[type="text"], label');
