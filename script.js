@@ -54,11 +54,10 @@ function calculateTax() {
     const medical = Math.ceil(basicSalary / 10);
     const conveyance = 30000;
     const festivalBonus = calculatedBonus;
-    const total = basicSalary + houseRent + medical + conveyance + festivalBonus;
 
 
-    const allowableExpenses = Math.min(total / 3, 450000);
-    const totalTaxableIncome = total - allowableExpenses;
+    const allowableExpenses = Math.min(totalReceived / 3, 450000);
+    const totalTaxableIncome = totalReceived - allowableExpenses;
 
     // Display the results in the new table
     document.getElementById("basicSalary").value = basicSalary;
@@ -66,7 +65,7 @@ function calculateTax() {
     document.getElementById("medical").value = medical;
     document.getElementById("conveyance").value = conveyance;
     document.getElementById("festivalBonus").value = festivalBonus;
-    document.getElementById("total").value = total;
+    document.getElementById("total").value = totalReceived;
 
     document.getElementById("allowableExpenses").value = allowableExpenses;
     document.getElementById("totalTaxableIncome").value = totalTaxableIncome;
@@ -117,9 +116,9 @@ function calculateIncomeTax(income) {
         tax5 = 5000 // 5% tax on the first Tk 1 lakh
         tax10 = 30000 // 10% tax on the next Tk 3 lakh
         tax15 = 60000 // 15% tax on the next Tk 4 lakh
-        tax20 = 80000 // 20% tax on the next Tk 5 lakh
+        tax20 = 100000 // 20% tax on the next Tk 5 lakh
 
-        tax25 = tax5 + tax10 + tax15 + tax20 + (income - 1650000) * 0.25;
+        tax25 = (income - 1650000) * 0.25;
     }
 
     const totalTax = Math.ceil(tax0 + tax5 + tax10 + tax15 + tax20 + tax25);
