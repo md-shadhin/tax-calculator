@@ -1,12 +1,12 @@
 document.getElementById("darkModeToggle").addEventListener("click", toggleDarkMode);
 
 function toggleDarkMode() {
-    
+
     const body = document.body;
-    body.classList.toggle("dark-mode");  
+    body.classList.toggle("dark-mode");
 }
 
-function btnCalculateTax(){
+function btnCalculateTax() {
     const salary = parseFloat(document.getElementById("salary").value);
     if (isNaN(salary)) {
         alert("Please enter valid numbers for Salary.");
@@ -54,11 +54,10 @@ function calculateTax() {
     const medical = Math.ceil(basicSalary / 10);
     const conveyance = 30000;
     const festivalBonus = calculatedBonus;
-    const total = basicSalary + houseRent + medical + conveyance + festivalBonus;
 
 
-    const allowableExpenses = Math.min(total / 3, 450000);
-    const totalTaxableIncome = total - allowableExpenses;
+    const allowableExpenses = Math.min(totalReceived / 3, 450000);
+    const totalTaxableIncome = totalReceived - allowableExpenses;
 
     // Display the results in the new table
     document.getElementById("basicSalary").value = basicSalary;
@@ -66,7 +65,6 @@ function calculateTax() {
     document.getElementById("medical").value = medical;
     document.getElementById("conveyance").value = conveyance;
     document.getElementById("festivalBonus").value = festivalBonus;
-    document.getElementById("total").value = total;
 
     document.getElementById("allowableExpenses").value = allowableExpenses;
     document.getElementById("totalTaxableIncome").value = totalTaxableIncome;

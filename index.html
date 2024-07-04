@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Tax Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css?v=2">
 </head>
+
 <body>
-    <a class="github-ribbon" href="https://github.com/md-shadhin/tax-calculator"><img decoding="async" width="100" height="100" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=200%2C200" class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
+    <a class="github-ribbon" href="https://github.com/md-shadhin/tax-calculator"><img decoding="async" width="100"
+            height="100"
+            src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=200%2C200"
+            class="attachment-full size-full" alt="Fork me on GitHub" loading="lazy" data-recalc-dims="1"></a>
     <div class="container">
 
 
-        <div style="margin-bottom: 15%;">
-            <h1 style="font-weight: 800;">Tax Calculator</h1>
-
-                  <div class="button r" id="button-2">
-                    <input type="checkbox" class="checkbox" type="checkbox" id="darkModeToggle"/>
-                    <div class="knobs"></div>
-                    <div class="layer"></div>
-                  </div>
+        <div style="margin-bottom: 5%;">
+            <h1 style="font-weight: 800; text-align: -webkit-center;">
+                <div style="width: 250px;text-align: end;"> 
+                    Tax Calculator <div style="font-size: small; color: darkgray;">Updated: July 2024</div>
+                </div>
+            </h1>
+            <br>
+            <div class="button r" id="button-2">
+                <input type="checkbox" class="checkbox" type="checkbox" id="darkModeToggle" />
+                <div class="knobs"></div>
+                <div class="layer"></div>
+            </div>
         </div>
+
         
 
 
-       
-        
         <table>
 
             <tr>
@@ -43,31 +51,7 @@
             </tr>
 
         </table>
-    
-        <table>
 
-            <tr>
-                <td><label>Yearly Salary:</label></td>
-                <td><input type="text" id="stepForCalculatedSalary" readonly></td>
-                <td><input type="text" id="calculatedSalary" readonly></td>
-            </tr>
-            <tr>
-                <td><label>Yearly Allowance:</label></td>
-                <td><input type="text" id="stepForCalculatedAllowance" readonly></td>
-                <td><input type="text" id="calculatedAllowance" readonly></td>
-            </tr>
-            <tr>
-                <td><label>Festival Bonus:</label></td>
-                <td><input type="text" id="stepForCalculatedBonus" readonly></td>
-                <td><input type="text" id="calculatedBonus" readonly></td>
-            </tr>
-            
-            <tr>
-                <td colspan="2"><label for="totalReceived">Total Yearly Received:</label></td>
-                <td><input type="text" id="totalReceived" readonly></td>
-            </tr>
-        </table>
-    
         <table>
             <tr>
                 <td><label>Basic Salary:</label></td>
@@ -89,20 +73,40 @@
                 <td><label>Festival Bonus:</label></td>
                 <td><input type="text" id="festivalBonus" readonly></td>
             </tr>
-            <tr>
-                <td><label>Total:</label></td>
-                <td><input type="text" id="total" readonly></td>
-            </tr>
+        </table>
+
+        <table>
 
             <tr>
-                <td><label>Less: Allowable Expenses:</label></td>
+                <td><label>Yearly Salary:</label></td>
+                <td><input type="text" id="stepForCalculatedSalary" readonly></td>
+                <td><input type="text" id="calculatedSalary" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Yearly Allowance:</label></td>
+                <td><input type="text" id="stepForCalculatedAllowance" readonly></td>
+                <td><input type="text" id="calculatedAllowance" readonly></td>
+            </tr>
+            <tr>
+                <td><label>Festival Bonus:</label></td>
+                <td><input type="text" id="stepForCalculatedBonus" readonly></td>
+                <td><input type="text" id="calculatedBonus" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="totalReceived">Total Yearly Received:</label></td>
+                <td><input type="text" id="totalReceived" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label>Less: Allowable Expenses:</label></td>
                 <td><input type="text" id="allowableExpenses" readonly></td>
             </tr>
             <tr>
-                <td><label>Total Taxable Income:</label></td>
+                <td colspan="2"><label>Total Taxable Income:</label></td>
                 <td><input type="text" id="totalTaxableIncome" readonly></td>
             </tr>
         </table>
+
+
 
         <table>
             <tr>
@@ -142,14 +146,15 @@
                 <td><input type="text" id="taxDeductiblePerMonth" readonly></td>
             </tr>
         </table>
-        
+
     </div>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 
     <script>
-        
+
     </script>
-    
+
 
 </body>
+
 </html>
