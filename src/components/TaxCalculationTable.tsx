@@ -21,16 +21,14 @@ const CustomTableCell = styled(TableCell)({
 
 interface TaxCalculationTableProps {
     taxable_income: number;
-    total_rebate: number;
     gender: string;
     first_slab: number;
 }
 
-const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_income, total_rebate, gender, first_slab }) => {
+const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_income, gender, first_slab }) => {
 
     let newAmount = 0;
     let tempRest = 0;
-    let totalTax = 0;
     let taxOn1st = 0;
     let taxOn2nd = 0;
     let taxOn3rd = 0;
@@ -59,6 +57,7 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
                             <TableCell align="right">{first_slab > taxable_income ? newAmount = 0 : newAmount = (taxable_income - first_slab)}</TableCell>
                         </TableRow>
 
+{}
                         <TableRow key='2nd'>
                             <TableCell>Next 100,000 (5%)</TableCell>
                             <TableCell align="right">{(taxOn2nd = Math.round(newAmount > 100000 ? 100000 * 0.05 : newAmount * 0.05)).toLocaleString()}</TableCell>
@@ -95,19 +94,7 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
                         <TableRow key='total_tax'>
                             <CustomTableCell>Total Tax</CustomTableCell>
                             <CustomTableCell align="right"></CustomTableCell>
-                            <CustomTableCell align="right">{(totalTax = taxOn1st + taxOn2nd + taxOn3rd + taxOn4th + taxOn5th + taxOnRest).toLocaleString()}</CustomTableCell>
-                        </TableRow>
-
-                        <TableRow key='total_rebate'>
-                            <CustomTableCell>Total Rebate</CustomTableCell>
-                            <CustomTableCell align="right"></CustomTableCell>
-                            <CustomTableCell align="right">{total_rebate.toLocaleString()}</CustomTableCell>
-                        </TableRow>
-
-                        <TableRow key='net_tax'>
-                            <CustomTableCell>Net Tax</CustomTableCell>
-                            <CustomTableCell align="right"></CustomTableCell>
-                            <CustomTableCell align="right">{(totalTax - total_rebate).toLocaleString()}</CustomTableCell>
+                            <CustomTableCell align="right">{(taxOn1st + taxOn2nd + taxOn3rd + taxOn4th + taxOn5th + taxOnRest).toLocaleString()}</CustomTableCell>
                         </TableRow>
 
                     </TableFooter>

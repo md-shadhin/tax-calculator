@@ -6,8 +6,4 @@ export interface CalculationDataType {
     festivalBonus: number;
     otherAllowance: number;
     advanceIncomeTax: number;
-    shanchayPatra: number;
-    dps: number;
-    zakat: number;
-    otherInvestment: number;
 }

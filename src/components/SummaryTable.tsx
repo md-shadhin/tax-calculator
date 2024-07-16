@@ -6,8 +6,6 @@ const HeaderCell = styled(TableCell)({
     backgroundColor: '#0066cc',
     color: 'white',
     fontWeight: 'bold',
-    borderBottom: 'none',
-    textAlign: 'center'
 });
 
 
@@ -17,12 +15,11 @@ interface SummaryTableProps {
     max_tax_free_income: number;
     tax_free_income: number;
     taxable_income: number;
-    total_investment: number;
 }
 
 
 const SummaryTable: React.FC<SummaryTableProps> = ({ total_earning, one_third_earning, max_tax_free_income,
-    tax_free_income, taxable_income, total_investment
+    tax_free_income, taxable_income
  }) => {
 
 
@@ -33,7 +30,7 @@ const SummaryTable: React.FC<SummaryTableProps> = ({ total_earning, one_third_ea
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <HeaderCell colSpan={2}>3. Summary</HeaderCell>
+                            <HeaderCell colSpan={2}>2. Summary</HeaderCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -52,9 +49,6 @@ const SummaryTable: React.FC<SummaryTableProps> = ({ total_earning, one_third_ea
                         </TableRow>
                         <TableRow key='taxable_income'>
                             <TableCell>e) Taxable Income [a-d]</TableCell><TableCell style={{textAlign:'end'}}>{taxable_income.toLocaleString()}</TableCell>
-                        </TableRow>
-                        <TableRow key='total_investment'>
-                            <TableCell>f) Total Investment</TableCell><TableCell style={{textAlign:'end'}}>{total_investment.toLocaleString()}</TableCell>
                         </TableRow>
                         
                     </TableBody>
