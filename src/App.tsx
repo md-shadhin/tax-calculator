@@ -36,6 +36,17 @@ const App: React.FC = () => {
     taxable_income: 0,
   });
 
+  const resetForm = () => {
+    setFormValues({
+      basic: 0,
+      houseRent: 0,
+      medicalAllowance: 0,
+      conveyance: 0,
+      festivalBonus: 0,
+      otherAllowance: 0,
+      advanceIncomeTax: 0,
+    });
+  };
 
   const handleInputChange = (field: string, value: number) => {
     // console.log(field, value)
@@ -103,7 +114,7 @@ const App: React.FC = () => {
         <Box my={4}>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <IncomeForm onChange={handleInputChange} inputData={formValues} />
+              <IncomeForm onChange={handleInputChange} inputData={formValues} onReset={resetForm} />
             </Grid>
             <Grid item xs={12} md={6}>
               <SummaryTable {...summary} />

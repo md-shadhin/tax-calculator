@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
+import RefreshIcon from '@mui/icons-material/Refresh';
 import { CalculationDataType } from '../models/model';
 
 
@@ -8,6 +9,9 @@ const HeaderCell = styled(TableCell)({
     backgroundColor: '#0066cc',
     color: 'white',
     fontWeight: 'bold',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
 });
 const CustomTableCell = styled(TableCell)({
     borderBottom: 'none',  // Hide body cell border
@@ -16,9 +20,10 @@ const CustomTableCell = styled(TableCell)({
 interface IncomeFormProps {
     onChange: (field: string, value: number) => void;
     inputData?: CalculationDataType;
+    onReset: () => void;
 }
 
-const IncomeForm: React.FC<IncomeFormProps> = ({ onChange, inputData }) => {
+const IncomeForm: React.FC<IncomeFormProps> = ({ onChange, inputData, onReset }) => {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         // console.log(event.target.id)
@@ -32,7 +37,11 @@ const IncomeForm: React.FC<IncomeFormProps> = ({ onChange, inputData }) => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <HeaderCell>1. Yearly Income</HeaderCell>
+                            <HeaderCell>1. Yearly Income 
+                                <IconButton onClick={onReset} style={{ color: 'white' }}>
+                                    <RefreshIcon />
+                                </IconButton>
+                            </HeaderCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
