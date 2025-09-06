@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Bangladesh Income Tax Calculator (2025-26 rates)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web app to calculate personal income tax for private salaried persons in Bangladesh, updated for the 2025-26 tax year. Built with React and Material-UI, this tool provides a simple way to estimate your tax liability based on the latest slabs and rules.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Supports all current tax slabs and rules for 2025-26
+- Separate calculations for male and female taxpayers
+- Clean, responsive UI with light/dark mode
+- Instant summary and detailed tax breakdown
+- Built-in validation and reset options
+- Deployable to GitHub Pages
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[https://md-shadhin.github.io/tax-calculator/](https://md-shadhin.github.io/tax-calculator/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v16 or later recommended)
+- npm
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone https://github.com/md-shadhin/tax-calculator.git
+cd tax-calculator
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the app in development mode:
 
-### `npm run eject`
+```sh
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Production Build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Build the app for production:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+npm run build
+```
 
-## Learn More
+### Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Deploy to GitHub Pages (as configured in `package.json`):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm run deploy
+```
+
+## Project Structure
+
+- `src/` — React components, models, and styles
+- `public/` — Static assets and meta files (including SEO/social tags)
+
+## Customization
+
+- Update tax slabs or rules in the relevant React components as needed.
+- Change the homepage URL in `package.json` if deploying to a different path.
+
+## License
+
+MIT
