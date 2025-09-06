@@ -34,6 +34,7 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
     let taxOn3rd = 0;
     let taxOn4th = 0;
     let taxOn5th = 0;
+    let taxOn6th = 0;
     let taxOnRest = 0;
 
 
@@ -54,10 +55,9 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
                         <TableRow key='1st'>
                             <TableCell>First {first_slab.toLocaleString()} (0%)</TableCell>
                             <TableCell align="right">{taxOn1st = 0}</TableCell>
-                            <TableCell align="right">{first_slab > taxable_income ? newAmount = 0 : newAmount = (taxable_income - first_slab)}</TableCell>
+                            <TableCell align="right">{first_slab > taxable_income ? newAmount = 0 : (newAmount = taxable_income - first_slab).toLocaleString()}</TableCell>
                         </TableRow>
 
-{}
                         <TableRow key='2nd'>
                             <TableCell>Next 100,000 (5%)</TableCell>
                             <TableCell align="right">{(taxOn2nd = Math.round(newAmount > 100000 ? 100000 * 0.05 : newAmount * 0.05)).toLocaleString()}</TableCell>
@@ -82,9 +82,15 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
                             <TableCell align="right">{(newAmount = Math.max(0, (newAmount - 500000))).toLocaleString()}</TableCell>
                         </TableRow>
 
+                        <TableRow key='6th'>
+                            <TableCell>Next 2,000,000 (25%)</TableCell>
+                            <TableCell align="right">{(taxOn6th = Math.round(newAmount > 2000000 ? 2000000 * 0.25 : newAmount * 0.25)).toLocaleString()}</TableCell>
+                            <TableCell align="right">{(newAmount = Math.max(0, (newAmount - 2000000))).toLocaleString()}</TableCell>
+                        </TableRow>
+
                         <TableRow key='rest'>
-                            <TableCell>Rest {(tempRest = Math.max((taxable_income - (1500000 + first_slab)), 0)).toLocaleString()} (25%)</TableCell>
-                            <TableCell align="right">{(taxOnRest = Math.round(newAmount > tempRest ? tempRest * 0.25 : newAmount * 0.25)).toLocaleString()}</TableCell>
+                            <TableCell>Rest {(tempRest = Math.max((taxable_income - (3500000 + first_slab)), 0)).toLocaleString()} (30%)</TableCell>
+                            <TableCell align="right">{(taxOnRest = Math.round(newAmount > tempRest ? tempRest * 0.3 : newAmount * 0.3)).toLocaleString()}</TableCell>
                             <TableCell align="right"></TableCell>
                         </TableRow>
 
@@ -94,7 +100,7 @@ const TaxCalculationTable: React.FC<TaxCalculationTableProps> = ({ taxable_incom
                         <TableRow key='total_tax'>
                             <CustomTableCell>Total Tax</CustomTableCell>
                             <CustomTableCell align="right"></CustomTableCell>
-                            <CustomTableCell align="right">{(taxOn1st + taxOn2nd + taxOn3rd + taxOn4th + taxOn5th + taxOnRest).toLocaleString()}</CustomTableCell>
+                            <CustomTableCell align="right">{(taxOn1st + taxOn2nd + taxOn3rd + taxOn4th + taxOn5th + taxOn6th + taxOnRest).toLocaleString()}</CustomTableCell>
                         </TableRow>
 
                     </TableFooter>

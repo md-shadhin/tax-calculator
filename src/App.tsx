@@ -31,7 +31,7 @@ const App: React.FC = () => {
   const [summary, setSummary] = useState({
     total_earning: 0,
     one_third_earning: 0,
-    max_tax_free_income: 450000,
+    max_tax_free_income: 500000,
     tax_free_income: 0,
     taxable_income: 0,
   });
@@ -83,7 +83,7 @@ const App: React.FC = () => {
 
     const grossPay = calculateGrossPay();
     const oneThirdOfTotalEarnings = Math.round(grossPay / 3);
-    const taxFreeIncome = Math.min(450000, oneThirdOfTotalEarnings);
+    const taxFreeIncome = Math.min(500000, oneThirdOfTotalEarnings);
     const taxableIncome = grossPay - taxFreeIncome;
 
     setSummary(prevState => ({
@@ -100,7 +100,7 @@ const App: React.FC = () => {
 
   const calculateTaxableIncome = () => {
     const grossPay = calculateGrossPay();
-    const maxTaxFreeIncome = 450000;
+    const maxTaxFreeIncome = 500000;
     const oneThirdOfTotalEarnings = grossPay / 3;
     const taxFreeIncome = Math.min(maxTaxFreeIncome, oneThirdOfTotalEarnings);
     return grossPay - taxFreeIncome;
